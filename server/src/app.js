@@ -6,6 +6,7 @@ require('express-async-errors'); // Handle async errors automatically
 
 const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes');
+const taskRoutes = require('./routes/taskRoutes');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 const logger = require('./utils/logger');
 
@@ -37,6 +38,7 @@ app.get('/health', (req, res) => {
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
+app.use('/api/tasks', taskRoutes);
 
 // Handle 404 errors
 app.use(notFound);
