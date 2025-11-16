@@ -24,6 +24,16 @@ global.testUtils = {
     content: 'This is test content',
     author: userId,
   }),
+
+  // Helper function to create mock task data
+  createMockTask: () => ({
+    title: 'Test Task',
+    description: 'This is a test task description',
+    status: 'todo',
+    priority: 'medium',
+    dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days from now
+    tags: ['test', 'sample'],
+  }),
 };
 
 // Suppress console errors and warnings during tests (optional)
